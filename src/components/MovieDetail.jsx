@@ -3,7 +3,7 @@ import React from "react";
 const MovieDetail = ({ movieDetail }) => {
   return (
     <div className="flex flex-col md:flex-row">
-      <div className="min-w-100 w-full max-w-1/2 h-screen">
+      <div className="w-full sm:max-w-full md:max-w-1/3 h-screen">
         <img
           src={`https://image.tmdb.org/t/p/w500/${movieDetail.poster_path}`}
           alt={movieDetail.title}
