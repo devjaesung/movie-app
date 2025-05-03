@@ -1,16 +1,15 @@
 import { Routes, Route } from "react-router-dom";
-import movieList from "@/mocks/movieListData.json";
 import movieDetail from "@/mocks/movieDetailData.json";
-import MovieCard from "@/components/MovieCard";
 import MovieDetail from "@/components/MovieDetail";
 import Layout from "@/components/Layout";
+import MainPage from "./pages/MainPage";
 
 const App = () => {
   return (
     <>
       <Routes>
         <Route element={<Layout />}>
-          <Route path="/" element={<MovieCard data={movieList.results} />} />
+          <Route path="/" element={<MainPage />} />
           <Route
             path="/details"
             element={<MovieDetail movieDetail={movieDetail} />}
