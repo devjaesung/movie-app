@@ -8,14 +8,15 @@ const options = {
   },
 };
 
-// 영화 목록 가져오기
-export const getMovieList = async (page = 1) => {
+// 영화 상세정보 가져오기
+export const getMovieDetail = async (id) => {
   try {
     const response = await axios(
-      `https://api.themoviedb.org/3/movie/popular?language=ko-KR&page=${page}`,
+      `https://api.themoviedb.org/3/movie/${id}?language=ko-KR`,
       options
     );
     const data = response.data;
+
     return data;
   } catch (err) {
     console.error(err);
