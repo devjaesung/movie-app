@@ -22,3 +22,19 @@ export const getMovieList = async (page = 1) => {
     throw err;
   }
 };
+
+// 검색 목록 가져오기
+export const getSearchMovies = async (query) => {
+  try {
+    const response = await axios(
+      `https://api.themoviedb.org/3/search/movie?query=${encodeURIComponent(
+        query
+      )}&language=ko-KR&page=1`,
+      options
+    );
+    return response.data.results;
+  } catch (err) {
+    console.error("검색 요청 실패:", err);
+    return [];
+  }
+};
